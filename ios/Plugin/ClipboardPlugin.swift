@@ -9,10 +9,29 @@ import Capacitor
 public class ClipboardPlugin: CAPPlugin {
     private let implementation = Clipboard()
 
-    @objc func echo(_ call: CAPPluginCall) {
-        let value = call.getString("value") ?? ""
-        call.resolve([
-            "value": implementation.echo(value)
-        ])
+    @objc func write(_ call: CAPPluginCall) {
+        call.resolve()
     }
+
+    @objc func writeURL(_ call: CAPPluginCall) {
+        call.resolve()
+    }
+
+    @objc func writeImage(_ call: CAPPluginCall) {
+        call.resolve()
+    }
+
+    @objc func read(_ call: CAPPluginCall) {
+        call.resolve()
+    }
+
+    @objc func readURL(_ call: CAPPluginCall) {
+        call.resolve()
+    }
+
+    @objc func readImage(_ call: CAPPluginCall) {
+        call.resolve()
+    }
+
 }
+

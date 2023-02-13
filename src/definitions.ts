@@ -1,3 +1,24 @@
 export interface ClipboardPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+
+  write(options: WriteOptions): Promise<void>;
+
+  writeURL(options: WriteOptions): Promise<void>;
+
+  writeImage(options: WriteOptions): Promise<void>;
+
+  read(): Promise<ReadResult>;
+
+  readURL(): Promise<ReadResult>;
+
+  readImage(): Promise<ReadResult>;
+}
+
+export interface WriteOptions {
+  value?: string;
+  label?: string;
+}
+
+export interface ReadResult {
+  value: string;
+  type: string;
 }
