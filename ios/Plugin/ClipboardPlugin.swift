@@ -7,8 +7,11 @@ import Capacitor
  */
 @objc(ClipboardPlugin)
 public class ClipboardPlugin: CAPPlugin {
-    private let implementation = Clipboard()
+    
+    /// Valor nulo.
+    private let null = NSNull()
 
+    
     @objc func write(_ call: CAPPluginCall) {
         call.resolve()
     }
@@ -26,7 +29,11 @@ public class ClipboardPlugin: CAPPlugin {
     }
 
     @objc func readURL(_ call: CAPPluginCall) {
-        call.resolve()
+        // UIPasteboard.general.hasURLs ? UIPasteboard.general.url! : null
+        let url = UIPasteboard.general.hasURLs ? UIPasteboard.general.url : nil;
+        call.resolve([
+            "url": url?.absoluteString ?? null
+        ])
     }
 
     @objc func readImage(_ call: CAPPluginCall) {
