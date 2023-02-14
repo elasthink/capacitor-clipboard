@@ -11,6 +11,8 @@ export interface ClipboardPlugin {
   readURL(): Promise<ReadResult>;
 
   readImage(): Promise<ReadResult>;
+
+  clear(): Promise<void>;
 }
 
 export interface WriteOptions {
