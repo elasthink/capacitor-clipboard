@@ -54,7 +54,7 @@ public class ClipboardPlugin: CAPPlugin {
         call.unimplemented("Not yet implemented!")
     }
     
-    /// Vacia el portapapeles.
+    /// Vacía el portapapeles.
     @objc func clear(_ call: CAPPluginCall) {
         UIPasteboard.general.items = []
         call.resolve()
