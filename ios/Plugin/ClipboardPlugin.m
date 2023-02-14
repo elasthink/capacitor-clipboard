@@ -10,4 +10,5 @@ CAP_PLUGIN(ClipboardPlugin, "Clipboard",
            CAP_PLUGIN_METHOD(write, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(writeURL, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(writeImage, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(clear, CAPPluginReturnPromise);
 )
